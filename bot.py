@@ -22,9 +22,6 @@ async def on_ready():
         print(error)
 
 @bot.event
-async def on_response(message: discord.Message)
-
-@bot.event
 async def on_message(message: discord.Message):
     text = message.split()
     if message.author.bot:
