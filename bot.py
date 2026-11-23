@@ -10,7 +10,7 @@ print("lancement du bot ...")
 bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
 
 salutation = ['Slt', 'Salut', 'Bonjour', 'Bjr']
-question = ['comment vas-tu ?', 'ca va ?']
+question = ['comment vas-tu ?', 'ca va ?', 'cv frrot ?']
 
 @bot.event
 async def on_ready():
