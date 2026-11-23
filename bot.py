@@ -23,7 +23,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message: discord.Message):
-    if not message.startswith("!"):
+    if not message.content.startswith("!"):
         return
     if message.author.bot:
         return
