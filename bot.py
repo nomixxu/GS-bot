@@ -20,15 +20,20 @@ async def on_ready():
         print(f"commandes syncronisées : {len(synced)}")
     except Exception as error:
         print(error)
- 
+
+@bot.event
+async def on_response(message: discord.Message)
+
 @bot.event
 async def on_message(message: discord.Message):
+    text = message.split()
     if message.author.bot:
         return
-    if message.content.lower().strip().replace(" ", "") == 'bonjourgs':
-        channel = message.channel
+    if text[0] != "!":
+        return
+    if message.content.lower().strip().replace(" ", "").replace("!", "") == 'bonjourgs':
         author = message.author
-        await channel.send(f"{random.choice(salutation)} `{author}` {random.choice(question)}")
+        await message.reply(f"{random.choice(salutation)} `{author}` {random.choice(question)}")
 
 @bot.tree.command(name="youtube", description="envoie le liens vers la chaine @Nomix")
 async def youtube(interaction: discord.Interaction):
