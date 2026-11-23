@@ -28,7 +28,7 @@ async def on_message(message: discord.Message):
     if message.content.lower().strip().replace(" ", "") == 'bonjourgs':
         channel = message.channel
         author = message.author
-        await channel.send(f"{random.choice(salutation)} `{author}` {random.choice(question)")
+        await channel.send(f"{random.choice(salutation)} `{author}` {random.choice(question)}")
 
 @bot.tree.command(name="youtube", description="envoie le liens vers la chaine @Nomix")
 async def youtube(interaction: discord.Interaction):
