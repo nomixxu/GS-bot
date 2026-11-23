@@ -1,5 +1,6 @@
 import discord
 import os
+import random
 from dotenv import load_dotenv
 from discord.ext import commands
 
@@ -7,6 +8,9 @@ load_dotenv()
 
 print("lancement du bot ...")
 bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
+
+salutation = ['Slt', 'Salut', 'Bonjour', 'Bjr']
+question = ['comment vas-tu ?', 'ca va ?']
 
 @bot.event
 async def on_ready():
@@ -24,7 +28,7 @@ async def on_message(message: discord.Message):
     if message.content.lower().strip().replace(" ", "") == 'bonjourgs':
         channel = message.channel
         author = message.author
-        await channel.send(f"Slt `{author}` comment vas-tu ?")
+        await channel.send(f"{random.choice(salutation)} `{author}` {random.choice(question)")
 
 @bot.tree.command(name="youtube", description="envoie le liens vers la chaine @Nomix")
 async def youtube(interaction: discord.Interaction):
