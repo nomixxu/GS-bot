@@ -23,10 +23,9 @@ async def on_ready():
 
 @bot.event
 async def on_message(message: discord.Message):
-    text = message.split()
-    if message.author.bot:
+    if not message.startswith("!"):
         return
-    if text[0] != "!":
+    if message.author.bot:
         return
     if message.content.lower().strip().replace(" ", "").replace("!", "") == 'bonjourgs':
         author = message.author
